@@ -358,6 +358,7 @@ let cidades = [
 var focoAtual;
 
 searchQueryElement.addEventListener("input", function(e){
+    removerSugestões()
     var a, b, i, val = this.value;
     if(!val){
         return false
@@ -375,6 +376,7 @@ searchQueryElement.addEventListener("input", function(e){
             b.addEventListener("click", function(e){
                 console.log(b.value)
                 searchQueryElement.value = this.getElementsByTagName("input")[0].value;
+                removerSugestões()
             });
 
             a.appendChild(b);
