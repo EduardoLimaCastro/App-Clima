@@ -104,10 +104,10 @@ async function getWeatherData(cidade,horarioSemanal){
         
         cidadeElement.innerText = data.resolvedAddress;
         condicaoElement.innerText = data.currentConditions.conditions;
-        chuvaElement.innerText = hoje.precip + "%";
+        chuvaElement.innerText = (hoje.precipprob || 0)  + "%";
         uvIndexElement.innerText = hoje.uvindex;
         ventoElement.innerText = hoje.windspeed + " km/h";
-        ventoDirStatusElement.innerText = hoje.winddir + "°";
+        ventoDirStatusElement.innerText = hoje.winddir + "°C";
         umidadeElement.innerText = hoje.humidity + "%";
         visibilidadeElement.innerText = hoje.visibility;  
         const leituravento = hoje.winddir;
@@ -131,6 +131,7 @@ async function getWeatherData(cidade,horarioSemanal){
         }
     }catch (error){
         console.error("Erro: ", error);
+        getWeatherData(cidade, horarioSemanal)
     }   
     
 }
@@ -388,7 +389,6 @@ function removerSugestões(){
     var x = document.getElementById("sugestoes");
     if(x) x.parentNode.removeChild(x);
 }
-
 searchQueryElement.addEventListener("keydown", function(e){
     var x = document.getElementById("sugestoes");
     if(x) x = x.getElementsByTagName("li");

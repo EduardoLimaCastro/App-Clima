@@ -112,7 +112,6 @@ body{
 }
 .condition-rain{
     font-size: 30px;
-    text-transform: capitalize;
 }
 .condition-rain div{
     display: flex;
@@ -164,7 +163,6 @@ nav .options{
     font-weight: 600;
     color: #1a1a1a;
     cursor: pointer;
-    text-transform: capitalize;
     animation: .5s ease;
 }
 .search ul{
@@ -182,7 +180,6 @@ nav .options{
     padding:10px 15px;
     border-bottom: 1px solid #fdfdfd;
     cursor: pointer;
-    text-transform: capitalize;
 }
 .search ul li:last-child{
     border-bottom: none;
@@ -259,7 +256,6 @@ nav .dark-mode button{
     width: 100%;
     font-size: 20px;
     font-weight: 600;
-    text-transform: capitalize;
     text-align: center;
 }
 .highlights .divider{
@@ -537,6 +533,12 @@ input[type="checkbox"]{
     .block{
         display: flex;
         flex-direction: column;
+    }    
+    .location-icon i{
+        font-size: 25px;
+    }
+    .location-text p{
+        font-size: 15px;
     }
 }
 @media screen and (max-width: 400px) {
@@ -546,6 +548,12 @@ input[type="checkbox"]{
     }
     .block{
         margin: 0 auto;
+    }
+    .location-icon i{
+        font-size: 20px;
+    }
+    .location-text p{
+        font-size: 10px;
     }
 }
 #loader {
@@ -558,7 +566,7 @@ input[type="checkbox"]{
 }
 
 .center {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
